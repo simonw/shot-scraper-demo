@@ -22,12 +22,16 @@ jobs:
         key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
+    - name: Cache Playwright browsers
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/ms-playwright/
+        key: ${{ runner.os }}-browsers
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
     - name: Install Playwright dependencies
       run: |
-        # python -m playwright install-deps
         shot-scraper install
     - name: Take shots
       run: |
