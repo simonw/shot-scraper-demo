@@ -1,6 +1,7 @@
 name: Take screnshots
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron:  '2 15 * * *'
@@ -33,6 +34,8 @@ jobs:
         shot-scraper multi shots.yml
     - name: Commit and push if anything changed
       run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
         git add -A
         timestamp=$(date -u)
         git commit -m "Latest: ${timestamp}" || exit 0
