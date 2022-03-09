@@ -1,0 +1,9 @@
+- url: https://www.owlsnearme.com/?place=127871
+  selector: 'section.secondary'
+  wait: 3000
+  javascript: |
+    Array.from(
+      document.querySelectorAll("section.secondary .spotting")
+    ).splice(9).forEach(el => el.parentNode.removeChild(el))
+  quality: 50
+  output: owlsnearme-el-granada.jpg
