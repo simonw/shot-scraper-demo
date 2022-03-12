@@ -17,4 +17,6 @@ This screenshot is generated [from this page](https://congress-legislators.datas
 
 This image is grabbed from the nine most recently spotted [Owls near El Granada, CA](https://www.owlsnearme.com/?place=127871), removing the "5 hours ago" text.
 
+You can compare previous versions of this image [using this commit history page](https://github.com/simonw/shot-scraper-demo/commits/main/owlsnearme-el-granada.jpg).
+
 ![A lovely collection of Owls](owlsnearme-el-granada.jpg)
