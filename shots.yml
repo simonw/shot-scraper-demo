@@ -12,7 +12,7 @@
   output: owlsnearme-el-granada.jpg
 - url: https://congress-legislators.datasettes.com/legislators/executive_terms?start__startswith=18&type=prez
   javascript: |
-    new Promise(resolve => {
+    new Promise(takeShot => {
       // Run in a promise so we can sleep 1s at the end
 
       function remove(el) { el.parentNode.removeChild(el);}
@@ -68,7 +68,7 @@
         var pos = document.querySelector('.dropdown-facet').getBoundingClientRect();
         svg.style.left = (pos.left - pos.width) + 'px';
         svg.style.top = (pos.top - 20) + 'px';
-        resolve();
+        takeShot();
       }, 1000);
     });
   output: annotated-screenshot.png
