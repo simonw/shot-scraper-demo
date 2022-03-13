@@ -35,7 +35,8 @@ jobs:
         shot-scraper install
     - name: Take shots
       run: |
-        shot-scraper multi shots.yml
+        shot-scraper multi annotated-screenshot.yml --retina
+        shot-scraper multi owlsnearme-el-granada.yml
     - name: Commit and push if anything changed
       run: |-
         git config user.name "Automated"
