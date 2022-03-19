@@ -4,7 +4,7 @@
   javascript: |
     Array.from(
       document.querySelectorAll("section.secondary .spotting")
-    ).splice(9).forEach(el => el.parentNode.removeChild(el));
+    ).splice(9).forEach(el => el.remove());
     document.querySelectorAll(
       ".spotting-context span[title]"
     ).forEach(el => el.style.display = "none");

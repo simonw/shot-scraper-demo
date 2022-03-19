@@ -3,14 +3,12 @@
     new Promise(takeShot => {
       // Run in a promise so we can sleep 1s at the end
 
-      function remove(el) { el.parentNode.removeChild(el);}
-
       // Remove header and footer
-      remove(document.querySelector('header'));
-      remove(document.querySelector('footer'));
+      document.querySelector('header').remove();
+      document.querySelector('footer').remove()
 
       // Remove most of the children of .content
-      Array.from(document.querySelectorAll('.content > *:not(.table-wrapper,.suggested-facets)')).map(remove)
+      Array.from(document.querySelectorAll('.content > *:not(.table-wrapper,.suggested-facets)')).map(el => el.remove());
 
       // Bit of breathing room for the screenshot
       document.body.style.marginTop = '10px';
@@ -24,7 +22,7 @@
       document.querySelector('th.col-executive_id svg').dispatchEvent(new Event('click'));
 
       // Remove all but table header and first 11 rows
-      Array.from(document.querySelectorAll('tr')).slice(12).map(remove);
+      Array.from(document.querySelectorAll('tr')).slice(12).map(el => el.remove());
 
       // Add a pink SVG arrow
       let div = document.createElement('div');
